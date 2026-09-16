@@ -137,6 +137,55 @@ CREATE TABLE IF NOT EXISTS fact_ventas (
     CONSTRAINT fk_ventas_prod FOREIGN KEY (product_key) REFERENCES dim_producto(product_key)
 ) ENGINE=InnoDB;`
     },
+    "schema_sqlite.sql": {
+      label: "database/schema_sqlite.sql",
+      language: "sql",
+      path: "database/schema_sqlite.sql",
+      code: `-- =========================================================================
+-- MaxwellDistrib BI (Demo para Portafolio) - SQLite Star Schema
+-- Base de datos analítica autónoma y ligera (Zero-Config)
+-- =========================================================================
+
+CREATE TABLE IF NOT EXISTS dim_fecha (
+    date_key INTEGER PRIMARY KEY,
+    fecha TEXT NOT NULL UNIQUE,
+    anio INTEGER NOT NULL,
+    mes INTEGER NOT NULL,
+    nombre_mes TEXT NOT NULL,
+    trimestre INTEGER NOT NULL,
+    dia INTEGER NOT NULL,
+    dia_semana TEXT NOT NULL,
+    es_fin_semana INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS dim_producto (
+    product_key INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_producto TEXT NOT NULL UNIQUE,
+    nombre_producto TEXT NOT NULL,
+    categoria TEXT NOT NULL,
+    costo_estandar_cordobas REAL NOT NULL DEFAULT 0.0,
+    precio_lista_cordobas REAL NOT NULL DEFAULT 0.0
+);
+
+CREATE TABLE IF NOT EXISTS fact_ventas (
+    sales_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_transaccion TEXT NOT NULL UNIQUE,
+    date_key INTEGER NOT NULL,
+    product_key INTEGER NOT NULL,
+    customer_key INTEGER NOT NULL,
+    branch_key INTEGER NOT NULL,
+    cantidad INTEGER NOT NULL,
+    precio_unitario_cordobas REAL NOT NULL,
+    subtotal_cordobas REAL NOT NULL,
+    impuesto_iva_cordobas REAL NOT NULL,
+    total_venta_cordobas REAL NOT NULL,
+    costo_total_cordobas REAL NOT NULL,
+    utilidad_bruta_cordobas REAL NOT NULL,
+    margen_bruto_pct REAL NOT NULL,
+    FOREIGN KEY (date_key) REFERENCES dim_fecha(date_key),
+    FOREIGN KEY (product_key) REFERENCES dim_producto(product_key)
+);`
+    },
     "main.py": {
       label: "api/main.py",
       language: "python",

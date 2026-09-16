@@ -1,28 +1,43 @@
-# NicaDistrib BI - .htaccess para cPanel / Apache
+# MaxwellDistrib BI (Demo para Portafolio) - .htaccess para cPanel / Apache
 # Diseñado para alojar en: public_html/Portafolio/NicaDistrib-BI/
+
+DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /Portafolio/NicaDistrib-BI/
-    
-    # Si el archivo o carpeta existe físicamente, servir directamente
-    RewriteCond %{REQUEST_FILENAME} -s [OR]
-    RewriteCond %{REQUEST_FILENAME} -l [OR]
+
+    # Si se accede al directorio sin barra final (/), redirigir con barra para resolver rutas relativas
+    RewriteCond %{REQUEST_URI} ^/Portafolio/NicaDistrib-BI$ [NC]
+    RewriteRule ^(.*)$ /Portafolio/NicaDistrib-BI/ [R=301,L]
+
+    # Si el archivo o carpeta existe físicamente en el disco, servirlo directamente
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
-    RewriteRule ^.*$ - [NC,L]
-    
-    # Redirigir cualquier otra petición a index.html para soportar Angular / React SPA Routing
-    RewriteRule ^(.*) index.html [NC,L]
+    RewriteRule ^ - [L]
+
+    # Redirigir cualquier otra petición SPA a index.html
+    RewriteRule ^ index.html [L]
 </IfModule>
 
-# Seguridad y Cabeceras
+# Tipos MIME para JavaScript moderno (Vite ES Modules), CSS y Assets
+<IfModule mod_mime.c>
+    AddType application/javascript .js .mjs
+    AddType text/css .css
+    AddType application/json .json
+    AddType image/svg+xml .svg
+    AddType application/vnd.ms-excel .xlsx
+    AddType application/x-sqlite3 .sqlite .db
+</IfModule>
+
+# Cabeceras permisivas para embebido en portafolios e iframes
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
+    Header unset X-Frame-Options
+    Header set Access-Control-Allow-Origin "*"
 </IfModule>
 
-# Compresión Gzip para carga rápida en conexiones móviles de Nicaragua
+# Compresión Gzip para optimizar transferencia
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
 </IfModule>

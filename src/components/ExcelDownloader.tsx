@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, FileSpreadsheet, Check, ArrowRight, ShieldAlert, Sparkles, FolderDown } from 'lucide-react';
+import { Download, FileSpreadsheet, Check, ArrowRight, ShieldAlert, Sparkles, FolderDown, Database, Code2 } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import JSZip from 'jszip';
 import { PRODUCTOS_DATA, PROVEEDORES_DATA, DEPARTAMENTOS_NICARAGUA } from '../data/nicaraguaData';
@@ -296,6 +296,54 @@ export const ExcelDownloader: React.FC = () => {
             <Download className="w-3.5 h-3.5" />
             <span>Descargar Dataset para Power BI</span>
           </button>
+        </div>
+
+        {/* Card 6: SQLite Demo Database */}
+        <div className="p-5 rounded-2xl bg-slate-800/80 border border-emerald-500/40 shadow-md flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+                SQLite Autónomo (Zero-Config)
+              </span>
+              <Database className="w-5 h-5 text-emerald-400" />
+            </div>
+            <h3 className="text-base font-bold text-white mb-1">maxwelldistrib_demo.sqlite</h3>
+            <p className="text-xs text-slate-300 mb-4">
+              Base de datos relacional/dimensional lista en archivo SQLite. Incluye las tablas de dimensiones (fecha, producto, cliente, sucursal, proveedor) y hechos (ventas, compras, inventario) pobladas, sin necesidad de servidor de base de datos.
+            </p>
+          </div>
+          <a
+            href="./database/maxwelldistrib_demo.sqlite"
+            download="maxwelldistrib_demo.sqlite"
+            className="w-full py-2 px-3 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 transition-colors cursor-pointer text-center"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Descargar BD Demo SQLite (.sqlite)</span>
+          </a>
+        </div>
+
+        {/* Card 7: DDL SQLite SQL */}
+        <div className="p-5 rounded-2xl bg-slate-800/80 border border-blue-500/40 shadow-md flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-semibold">
+                Script DDL SQLite
+              </span>
+              <Code2 className="w-5 h-5 text-blue-400" />
+            </div>
+            <h3 className="text-base font-bold text-white mb-1">schema_sqlite.sql</h3>
+            <p className="text-xs text-slate-300 mb-4">
+              Script SQL optimizado con sintaxis SQLite: claves foráneas automáticas, tipos de datos portátiles y creación de índices analíticos sobre fechas, productos y proveedores.
+            </p>
+          </div>
+          <a
+            href="./database/schema_sqlite.sql"
+            download="schema_sqlite.sql"
+            className="w-full py-2 px-3 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center gap-2 transition-colors cursor-pointer text-center"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Descargar DDL SQLite (.sql)</span>
+          </a>
         </div>
       </div>
     </div>

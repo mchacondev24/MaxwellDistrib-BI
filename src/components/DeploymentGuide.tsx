@@ -139,12 +139,12 @@ RewriteRule . /Portafolio/NicaDistrib-BI/index.html [L]`}
           </pre>
         </div>
 
-        {/* Step 4 */}
+        {/* Step 4: MySQL */}
         <div className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700/80 shadow-md">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">4</span>
-              <h3 className="text-sm font-bold text-white">Importar el Star Schema en MySQL de cPanel (phpMyAdmin)</h3>
+              <h3 className="text-sm font-bold text-white">Opción A: Importar en MySQL de cPanel (phpMyAdmin)</h3>
             </div>
             <button
               onClick={() => copyCommand("mysql -u ingefknc_bi -p ingefknc_nicadistrib_dw < database/schema.sql", "cmd4")}
@@ -159,6 +159,32 @@ RewriteRule . /Portafolio/NicaDistrib-BI/index.html [L]`}
           </p>
           <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 font-mono text-xs text-blue-300">
             mysql -u ingefknc_bi -p ingefknc_nicadistrib_dw &lt; database/schema.sql
+          </div>
+        </div>
+
+        {/* Step 5: SQLite Zero-Config */}
+        <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-slate-800/90 to-slate-800/90 border border-emerald-500/40 shadow-md">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">5</span>
+              <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                <span>Opción B Demo: SQLite Autónomo (Zero-Config)</span>
+                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Recomendado para Demo</span>
+              </h3>
+            </div>
+            <button
+              onClick={() => copyCommand("sqlite3 database/maxwelldistrib_demo.sqlite < database/schema_sqlite.sql", "cmd5")}
+              className="flex items-center gap-1 text-xs px-2.5 py-1 rounded bg-slate-700 text-slate-300 hover:bg-slate-600"
+            >
+              {copiedCmd === "cmd5" ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+              <span>{copiedCmd === "cmd5" ? "Copiado" : "Copiar Comando"}</span>
+            </button>
+          </div>
+          <p className="text-xs text-slate-300 mb-2">
+            Si no deseas configurar usuarios ni permisos en MySQL en cPanel, el proyecto incluye una base de datos SQLite pre-creada con todas las dimensiones y hechos en <code className="text-emerald-300 font-mono">database/maxwelldistrib_demo.sqlite</code> (y su DDL <code className="text-emerald-300 font-mono">database/schema_sqlite.sql</code>). La web app es 100% interactiva en el cliente y no requiere ningún demonio de base de datos encendido en el hosting.
+          </p>
+          <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 font-mono text-xs text-emerald-300">
+            sqlite3 database/maxwelldistrib_demo.sqlite &lt; database/schema_sqlite.sql
           </div>
         </div>
       </div>
