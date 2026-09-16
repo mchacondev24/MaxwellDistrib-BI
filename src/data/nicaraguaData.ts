@@ -99,11 +99,10 @@ export const AUTHOR_INFO = {
   rol: "Ingeniero de Sistemas | Analista de Datos & Business Intelligence",
   correo: "ing.chacon.maxwell@gmail.com",
   linkedin: "https://www.linkedin.com/in/ingemaxwellchacon",
-  github: "https://github.com/maxwellchacon",
-  sitioWeb: "http://ingemaxwellchacon.com",
+  github: "https://github.com/mchacondev24",
+  sitioWeb: "https://ingemaxwellchacon.com",
   cPanelHost: "ingemaxwellchacon.com",
   cPanelUrl: "https://business174.web-hosting.com/cpanel",
-  cPanelUser: "ingefknc",
   cPanelFolder: "public_html/Portafolio/NicaDistrib-BI",
   ubicacion: "Nicaragua",
   pais: "Nicaragua"

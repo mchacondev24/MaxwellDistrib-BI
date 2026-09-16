@@ -168,8 +168,8 @@ npm run dev
 ## 🌐 Despliegue en Servidor de Producción (cPanel / Apache)
 
 - **Servidor:** `ingemaxwellchacon.com`
-- **Ruta de Publicación:** `/home/ingefknc/public_html/Portafolio/NicaDistrib-BI`
-- **Configuración de Apache:** Incluye el archivo `apache/.htaccess` para resolver rutas SPA evitando errores 404 al refrescar páginas.
+- **Demo en Vivo:** [https://ingemaxwellchacon.com/Portafolio/NicaDistrib-BI/](https://ingemaxwellchacon.com/Portafolio/NicaDistrib-BI/)
+- **Configuración de Apache:** Incluye el archivo `apache/.htaccess` para resolver rutas SPA y tipos MIME.
 
 ---
 
@@ -180,4 +180,4 @@ npm run dev
 - **Correo Electrónico:** [ing.chacon.maxwell@gmail.com](mailto:ing.chacon.maxwell@gmail.com)  
 - **Perfil de LinkedIn:** [linkedin.com/in/ingemaxwellchacon](https://www.linkedin.com/in/ingemaxwellchacon)  
 - **Portafolio Web:** [ingemaxwellchacon.com](http://ingemaxwellchacon.com)  
-- **GitHub:** [github.com/maxwellchacon](https://github.com/maxwellchacon)  
+- **GitHub:** [github.com/mchacondev24](https://github.com/mchacondev24)  

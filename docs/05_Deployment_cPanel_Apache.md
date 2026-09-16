@@ -1,20 +1,20 @@
-# NicaDistrib BI — Manual de Despliegue en cPanel / Apache
+# MaxwellDistrib BI — Manual de Despliegue en cPanel / Apache
 
 **Destino de Servidor:** `ingemaxwellchacon.com`  
-**Usuario cPanel:** `ingefknc`  
-**Directorio Destino:** `/home/ingefknc/public_html/Portafolio/NicaDistrib-BI`  
-**Base de Datos MySQL:** `ingefknc_nicadistrib_dw`
+**Directorio Destino:** `public_html/Portafolio/NicaDistrib-BI/`  
+**Base de Datos MySQL:** `nicadistrib_dw` (o SQLite para modo demo)
 
 ---
 
 ## 1. Creación de la Base de Datos en cPanel
 
-1. Iniciar sesión en cPanel (`https://business174.web-hosting.com/cpanel` o `http://ingemaxwellchacon.com/cpanel`).
+1. Iniciar sesión en cPanel.
 2. Ir a la sección **Bases de datos MySQL**:
-   - Crear base de datos: `ingefknc_nicadistrib_dw`.
-   - Crear usuario: `ingefknc_nicabi` con contraseña asignada.
+   - Crear base de datos para el Data Warehouse.
+   - Crear usuario con permisos asignados.
    - Vincular usuario a la base de datos y otorgar **TODOS LOS PRIVILEGIOS**.
-3. Abrir **phpMyAdmin**, seleccionar la base de datos `ingefknc_nicadistrib_dw` e importar el archivo `database/schema.sql`.
+3. Abrir **phpMyAdmin**, seleccionar la base de datos e importar el archivo `database/schema.sql`.
+   *(Alternativa Demo: Usar el archivo SQLite `database/maxwelldistrib_demo.sqlite` sin necesidad de configurar MySQL).*
 
 ---
 
@@ -26,9 +26,9 @@
    ```
 2. La carpeta resultante `dist/` contiene los archivos optimizados (`index.html`, `assets/*.js`, `assets/*.css`).
 3. Vía **Administrador de Archivos de cPanel** o FTP:
-   - Crear la carpeta `/home/ingefknc/public_html/Portafolio/NicaDistrib-BI/`.
+   - Crear la carpeta `public_html/Portafolio/NicaDistrib-BI/`.
    - Subir el contenido de la carpeta `dist/` a este directorio.
-   - Subir el archivo `apache/.htaccess` a `/home/ingefknc/public_html/Portafolio/NicaDistrib-BI/.htaccess`.
+   - Subir el archivo `apache/.htaccess` a `public_html/Portafolio/NicaDistrib-BI/.htaccess`.
 
 ---
 

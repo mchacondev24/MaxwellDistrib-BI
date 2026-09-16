@@ -50,20 +50,15 @@ export const DeploymentGuide: React.FC = () => {
           <span>Parámetros del Servidor Host</span>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
           <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
             <span className="text-slate-500 block mb-0.5">Dominio Principal:</span>
             <span className="font-mono text-white font-semibold">{AUTHOR_INFO.cPanelHost}</span>
           </div>
 
           <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-            <span className="text-slate-500 block mb-0.5">Usuario de Sistema:</span>
-            <span className="font-mono text-white font-semibold">{AUTHOR_INFO.cPanelUser}</span>
-          </div>
-
-          <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-            <span className="text-slate-500 block mb-0.5">Directorio Raíz:</span>
-            <span className="font-mono text-white font-semibold">/home/ingefknc</span>
+            <span className="text-slate-500 block mb-0.5">Directorio Raíz Web:</span>
+            <span className="font-mono text-white font-semibold">public_html</span>
           </div>
 
           <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">

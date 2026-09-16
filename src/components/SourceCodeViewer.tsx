@@ -239,13 +239,13 @@ def health_check():
 <VirtualHost *:80>
     ServerName ingemaxwellchacon.com
     ServerAlias www.ingemaxwellchacon.com
-    DocumentRoot /home/ingefknc/public_html
+    DocumentRoot /var/www/html
 
     # Proxy a la API REST de FastAPI
     ProxyPass /api/ http://127.0.0.1:8000/api/
     ProxyPassReverse /api/ http://127.0.0.1:8000/api/
 
-    <Directory /home/ingefknc/public_html>
+    <Directory /var/www/html>
         Options -Indexes +FollowSymLinks
         AllowOverride All
         Require all granted
