@@ -11,7 +11,7 @@ export const SourceCodeViewer: React.FC = () => {
       language: "python",
       path: "python/generate_dataset.py",
       code: `"""
-NicaDistrib BI - Generador de Datasets de Prueba con Contexto de Nicaragua
+MaxwellDistrib BI (Demo para Portafolio) - Generador de Datasets de Prueba con Contexto de Nicaragua
 Genera compras, ventas e inventario con anomalías intencionales para evaluar ETL.
 """
 import random
@@ -50,7 +50,7 @@ if __name__ == "__main__":
       language: "python",
       path: "python/etl.py",
       code: `"""
-NicaDistrib BI - Pipeline ETL Orquestador Principal
+MaxwellDistrib BI (Demo para Portafolio) - Pipeline ETL Orquestador Principal
 Cubre Extracción, Validación (Data Quality), Transformación y Carga Idempotente en MySQL.
 """
 import sys
@@ -63,7 +63,7 @@ from load import load_into_mysql_dw
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 def run_pipeline():
-    logging.info("=== INICIANDO PIPELINE ETL NICADISTRIB BI ===")
+    logging.info("=== INICIANDO PIPELINE ETL MAXWELLDISTRIB BI ===")
     
     # 1. Extracción de archivos Excel
     raw_data = extract_all_raw_files(data_dir="data/raw")
@@ -88,7 +88,7 @@ if __name__ == "__main__":
       language: "sql",
       path: "database/schema.sql",
       code: `-- =========================================================================
--- NicaDistrib BI - Star Schema Dimensional Model (MySQL 8)
+-- MaxwellDistrib BI (Demo para Portafolio) - Star Schema Dimensional Model (MySQL 8)
 -- Base de datos: ingefknc_nicadistrib_dw
 -- =========================================================================
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS fact_ventas (
       language: "python",
       path: "api/main.py",
       code: `"""
-NicaDistrib BI - FastAPI REST Backend
+MaxwellDistrib BI (Demo para Portafolio) - FastAPI REST Backend
 Expone los KPIs y agregaciones analíticas para el frontend y herramientas externas.
 """
 from fastapi import FastAPI
@@ -150,7 +150,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 app = FastAPI(
-    title="NicaDistrib BI API",
+    title="MaxwellDistrib BI (Demo para Portafolio) API",
     description="API REST de Analítica Comercial y Business Intelligence para Nicaragua",
     version="1.0.0"
 )

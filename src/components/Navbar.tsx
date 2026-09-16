@@ -33,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab, onOpenCo
       <div className="bg-slate-950/80 px-4 py-1.5 border-b border-slate-800/60 text-xs flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <NicaraguaFlag className="w-5 h-3.5" />
-          <span className="font-semibold text-slate-200 tracking-wide">NicaDistrib BI</span>
+          <span className="font-semibold text-slate-200 tracking-wide">MaxwellDistrib BI (Demo para Portafolio)</span>
           <span className="text-slate-500">|</span>
           <span className="text-slate-400 hidden sm:inline">Portafolio Profesional de Analista de Datos & Business Intelligence</span>
         </div>
@@ -85,12 +85,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab, onOpenCo
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-lg text-white tracking-tight">NicaDistrib BI</span>
+                <span className="font-bold text-lg text-white tracking-tight">MaxwellDistrib BI</span>
                 <span className="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                  Data Analytics
+                  Demo para Portafolio
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 leading-none">Distribución Comercial en Nicaragua</p>
+              <p className="text-[11px] text-slate-400 leading-none">Business Intelligence & Distribución Comercial</p>
             </div>
           </div>
 

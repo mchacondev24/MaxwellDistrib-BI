@@ -1,5 +1,5 @@
 {
-  "name": "NicaDistrib BI - Plataforma de Business Intelligence",
+  "name": "MaxwellDistrib BI (Demo para Portafolio)",
   "description": "Sistema completo de Inteligencia de Negocios y Analítica de Datos para distribución comercial en Nicaragua: Excel, Python/Pandas ETL, MySQL Data Warehouse, FastAPI, Angular Material, Power BI y Apache.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

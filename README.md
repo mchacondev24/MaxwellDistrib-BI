@@ -1,4 +1,4 @@
-# NicaDistrib BI — Sistema de Inteligencia de Negocios para Distribución Comercial
+# MaxwellDistrib BI (Demo para Portafolio) — Sistema de Inteligencia de Negocios para Distribución Comercial
 
 [![Nicaragua](https://img.shields.io/badge/Pa%C3%ADs-Nicaragua-0067c6.svg)](https://es.wikipedia.org/wiki/Nicaragua)
 [![Data Stack](https://img.shields.io/badge/Stack-Python_%7C_MySQL_%7C_FastAPI_%7C_PowerBI_%7C_Apache-blue.svg)](#arquitectura-del-sistema)
@@ -11,7 +11,7 @@
 
 ## 🎯 Resumen Ejecutivo del Proyecto
 
-**NicaDistrib BI** es una solución integral de analítica empresarial que aborda la problemática habitual de las distribuidoras comerciales: la dispersión de datos en planillas Excel no estandarizadas, la presencia de anomalías de captura, la falta de centralización de la información y la dificultad para monitorear indicadores clave de la cadena de suministro (rotación de inventario, tiempos de entrega de proveedores y quiebres de stock).
+**MaxwellDistrib BI (Demo para Portafolio)** es una solución integral de analítica empresarial que aborda la problemática habitual de las distribuidoras comerciales: la dispersión de datos en planillas Excel no estandarizadas, la presencia de anomalías de captura, la falta de centralización de la información y la dificultad para monitorear indicadores clave de la cadena de suministro (rotación de inventario, tiempos de entrega de proveedores y quiebres de stock).
 
 A través de esta arquitectura se demuestra el ciclo completo de madurez analítica:
 1. **Extracción y Validación (Data Quality):** Ingesta automatizada de archivos Excel con detección proactiva de inconsistencias, duplicados y rechazos auditados.

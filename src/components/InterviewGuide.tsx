@@ -25,7 +25,7 @@ Tercero, modelé medidas en DAX para Power BI y construí un dashboard web inter
     '3m': {
       title: "Presentación Técnica Detallada (3 Minutos)",
       target: "Para Panel Técnico de Reclutamiento (Arquitectura & Negocio)",
-      script: `«Buenas tardes. Les presento NicaDistrib BI, un proyecto de analítica de datos end-to-end diseñado para resolver los desafíos típicos de una distribuidora comercial en Nicaragua.
+      script: `«Buenas tardes. Les presento MaxwellDistrib BI (Demo para Portafolio), un proyecto de analítica de datos end-to-end diseñado para resolver los desafíos típicos de una distribuidora comercial en Nicaragua.
 
 1. CAPA DE EXTRACCIÓN Y CALIDAD: En lugar de asumir datos perfectos, partí de la realidad: hojas de cálculo con errores humanos. El módulo 'extract.py' recopila los archivos mensuales y 'validate.py' ejecuta pruebas de integridad: unicidad de transacción, rango de fechas válidas y consistencia de SKUs. Todo registro que no supera el estándar se segrega a una carpeta de rechazados con su motivo exacto, asegurando trazabilidad.
 
@@ -38,7 +38,7 @@ Tercero, modelé medidas en DAX para Power BI y construí un dashboard web inter
     '5m': {
       title: "Masterclass de Arquitectura End-to-End (5 Minutos)",
       target: "Para Entrevista Final con Stakeholders y Arquitectos de Datos",
-      script: `«NicaDistrib BI nació para responder a una necesidad crítica en las empresas de consumo masivo: la desconexión entre lo que se compra, lo que se almacena y lo que se factura. Permítanme guiarles a través de las 4 capas arquitectónicas de la solución:
+      script: `«MaxwellDistrib BI (Demo para Portafolio) nació para responder a una necesidad crítica en las empresas de consumo masivo: la desconexión entre lo que se compra, lo que se almacena y lo que se factura. Permítanme guiarles a través de las 4 capas arquitectónicas de la solución:
 
 CAPA 1: INGESTIÓN Y AUDITORÍA
 Implementé un pipeline modular en Python 3.10 estructurado en: extract, validate, transform y load. Durante la validación, el script no solo descarta registros corruptos, sino que genera métricas de 'Data Health Score' (en este caso, 99.17% de calidad tras corregir 24 anomalías en 2,906 registros). Las transformaciones estandarizan la moneda nacional (Córdobas - C$), calculan el IVA del 15% según la legislación tributaria nicaragüense y derivan la utilidad bruta unitaria.

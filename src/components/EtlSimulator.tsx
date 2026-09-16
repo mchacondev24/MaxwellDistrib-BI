@@ -39,7 +39,7 @@ export const EtlSimulator: React.FC = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [activeStep, setActiveStep] = useState<number>(4);
   const [logs, setLogs] = useState<string[]>([
-    "[08:30:00] INFO: Pipeline ETL NicaDistrib BI inicializado.",
+    "[08:30:00] INFO: Pipeline ETL MaxwellDistrib BI (Demo para Portafolio) inicializado.",
     "[08:30:01] EXTRACT: Encontrados 3 archivos de ventas (ventas_enero.xlsx, ventas_febrero.xlsx, ventas_marzo.xlsx).",
     "[08:30:02] EXTRACT: Encontrados compras_enero.xlsx, compras_febrero.xlsx e inventario.xlsx.",
     "[08:30:03] DATA QUALITY: Ejecutando validación de 2,906 filas crudas.",

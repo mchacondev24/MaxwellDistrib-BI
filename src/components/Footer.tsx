@@ -22,7 +22,7 @@ export const Footer: React.FC<{ onOpenContact: () => void }> = ({ onOpenContact 
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <NicaraguaFlag className="w-6 h-4" />
-              <span className="text-white font-bold text-base tracking-tight">NicaDistrib BI</span>
+              <span className="text-white font-bold text-base tracking-tight">MaxwellDistrib BI (Demo para Portafolio)</span>
             </div>
             <p className="text-xs text-slate-400 max-w-sm">
               Solución integral de Business Intelligence y Data Analytics. Pipeline ETL (Python + Pandas) → Star Schema (MySQL) → Power BI & Dashboard Web interactivo.

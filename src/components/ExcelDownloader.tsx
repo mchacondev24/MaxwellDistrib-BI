@@ -139,7 +139,7 @@ export const ExcelDownloader: React.FC = () => {
     const url = URL.createObjectURL(content);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "NicaDistrib_BI_Datasets_Excel.zip";
+    a.download = "MaxwellDistrib_BI_Datasets_Excel.zip";
     a.click();
     URL.revokeObjectURL(url);
     setDownloading(null);
