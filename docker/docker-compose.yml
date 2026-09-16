@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # Base de Datos MySQL 8 - Data Warehouse Star Schema
+  mysql-dw:
+    image: mysql:8.0
+    container_name: nicadistrib-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_secure_password
+      MYSQL_DATABASE: ingefknc_nicadistrib_dw
+      MYSQL_USER: ingefknc_nicabi
+      MYSQL_PASSWORD: ZNfXTxrhSzeQ
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    networks:
+      - nicadistrib-net
+
+  # API REST FastAPI
+  api:
+    build:
+      context: ../api
+      dockerfile: Dockerfile
+    container_name: nicadistrib-api
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=mysql-dw
+      - DB_PORT=3306
+      - DB_NAME=ingefknc_nicadistrib_dw
+      - DB_USER=ingefknc_nicabi
+      - DB_PASSWORD=ZNfXTxrhSzeQ
+    depends_on:
+      - mysql-dw
+    networks:
+      - nicadistrib-net
+
+  # Servidor Web Apache con Frontend Angular
+  frontend:
+    image: httpd:2.4-alpine
+    container_name: nicadistrib-web
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ../dist:/usr/local/apache2/htdocs
+      - ../apache/nicadistrib.conf:/usr/local/apache2/conf/extra/nicadistrib.conf
+    depends_on:
+      - api
+    networks:
+      - nicadistrib-net
+
+volumes:
+  mysql_data:
+
+networks:
+  nicadistrib-net:
+    driver: bridge

@@ -1,0 +1,28 @@
+# NicaDistrib BI - .htaccess para cPanel / Apache
+# Diseñado para alojar en: public_html/Portafolio/NicaDistrib-BI/
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /Portafolio/NicaDistrib-BI/
+    
+    # Si el archivo o carpeta existe físicamente, servir directamente
+    RewriteCond %{REQUEST_FILENAME} -s [OR]
+    RewriteCond %{REQUEST_FILENAME} -l [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^.*$ - [NC,L]
+    
+    # Redirigir cualquier otra petición a index.html para soportar Angular / React SPA Routing
+    RewriteRule ^(.*) index.html [NC,L]
+</IfModule>
+
+# Seguridad y Cabeceras
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Compresión Gzip para carga rápida en conexiones móviles de Nicaragua
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
